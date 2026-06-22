@@ -28,4 +28,6 @@ urlpatterns = [
     path('api/auth/register/', include('users.urls')),
     path('api/auth/login/', TokenObtainPairView.as_view(), name='login'),
     path('api/auth/refresh/', TokenRefreshView.as_view(), name='refresh'),
+
+    path('api/transactions/', include('transactions.urls')),
 ]
