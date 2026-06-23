@@ -21,6 +21,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from transactions.views import MonthlySummaryView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -30,4 +32,7 @@ urlpatterns = [
     path('api/auth/refresh/', TokenRefreshView.as_view(), name='refresh'),
 
     path('api/transactions/', include('transactions.urls')),
+    # Summary endpoint
+    path('api/summary/monthly/', MonthlySummaryView.as_view(), name='monthly-summary'),
+
 ]
